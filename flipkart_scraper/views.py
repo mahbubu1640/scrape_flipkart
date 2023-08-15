@@ -32,12 +32,12 @@ class ScrapeAndSaveView(APIView):
 
             product = Product.objects.create(
                 user=request.user,
-                title=title,
-                price=price,
-                description=description,
-                reviews=reviews,
-                ratings=ratings,
-                media_count=media_count
+                title=request.title,
+                price=request.price,
+                description=request.description,
+                reviews=request.reviews,
+                ratings=request.ratings,
+                media_count=request.media_count
             )
 
             serializer = ProductSerializer(product)
